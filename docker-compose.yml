@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  chatbot:
+    container_name: chatbot
+    restart: always
+    image: chatbot
+    build: .
+    user: root
+    volumes:
+      - ".:/home/"
+    command: bash -c "tail -f /dev/null"
