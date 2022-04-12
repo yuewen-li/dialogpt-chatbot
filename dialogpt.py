@@ -1,8 +1,8 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
-tokenizer = AutoTokenizer.from_pretrained("/model")
-model = AutoModelForCausalLM.from_pretrained("/model")
+tokenizer = AutoTokenizer.from_pretrained("/model/")
+model = AutoModelForCausalLM.from_pretrained("/model/")
 
 def chat_bot(n_round):
     for step in range(n_round):
@@ -19,4 +19,4 @@ def chat_bot(n_round):
         print("DialoGPT: {}".format(tokenizer.decode(chat_history_ids[:, bot_input_ids.shape[-1]:][0], skip_special_tokens=True)))
 
 if __name__ == '__main__':
-  chat_for_n_rounds(5)
+    chat_bot(5)
